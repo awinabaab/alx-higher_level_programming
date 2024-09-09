@@ -8,8 +8,7 @@
    Ubuntu 20.04 environment
 
 # Usage
-  - All `C` programs were compiled using `gcc -Wall -Werror -Wextra -pedantic\
-   -std=gnu89 <file(s)>`
+  - All `C` programs were compiled using `gcc -Wall -Werror -Wextra -pedantic -std=gnu89 <file(s)>`
   - Python programs can be run directly on Unix systems `./<filename>` or\
     `python3 <filename>`
 
