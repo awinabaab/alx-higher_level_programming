@@ -3,4 +3,4 @@ for ncomb in range(1, 100):
     if (ncomb // 10 > ncomb % 10) or (ncomb // 10 == ncomb % 10):
         continue
     else:
-        print("{ncomb:02d}".format(ncomb), end=', ' if ncomb < 89 else '\n')
+        print("{:02d}".format(ncomb), end=', ' if ncomb < 89 else '\n')
