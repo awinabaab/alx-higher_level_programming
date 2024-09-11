@@ -16,4 +16,5 @@
    - What are the arithmetic operators and how to use them
 
 ## 0-postitive_or_negative.py
-	A program that generates a random number each time it is executed and prints
+   A program that generates a random number each time it is executed and prints
+
