@@ -1,16 +1,17 @@
 # Python - Hello, World
-       	 - Why Python programming is awesome
-       	 - Who created Python
-       	 - Who is Guido van Rossum
-       	 - Where does the name ‘Python’ come from
-       	 - What is the Zen of Python
-       	 - How to use the Python interpreter
-       	 - How to print text and variables using print
-       	 - How to use strings
-       	 - What are `indexing` and `slicing` in Python
-       	 - What is the official Python coding style and how to check your code
-	 with `pycodestyle`
+  - Why Python programming is awesome
+  - Who created Python
+  - Who is Guido van Rossum
+  - Where does the name ‘Python’ come from
+  - What is the Zen of Python
+  - How to use the Python interpreter
+  - How to print text and variables using print
+  - How to use strings
+  - What are `indexing` and `slicing` in Python
+  - What is the official Python coding style and how to check your code
+  with `pycodestyle`
 
+# Files
 ## [0-run](https://github.com/awinabaab/alx-higher_level_programming/blob/master/0x00-python-hello_world/0-run)
    A Shell script that runs a Python script
 
@@ -77,10 +78,10 @@
    A Python function `def magic_calculation(a, b)`: that does exactly the same\
    as the following Python bytecode:
    ````
-   3 	  0 LOAD_CONST	   1 (98)
-   	  3 LOAD_FAST	   0 (a)
-	  6 LOAD_FAST	   1 (b)
-	  9 BINARY_POWER
-	 10 BINARY_ADD
-	 11 RETURN_VALUE
+   3  0 LOAD_CONST	1 (98)
+      3 LOAD_FAST	0 (a)
+      6 LOAD_FAST	1 (b)
+      9 BINARY_POWER
+      10 BINARY_ADD
+      11 RETURN_VALUE
    ```
