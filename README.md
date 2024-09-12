@@ -20,14 +20,15 @@
   4. Run Python scripts using:
      `python3 <filename>` or `./filename`
 
-### [0x00-python-hello_world/](https://github.com/awinabaab/alx-higher_level_programming/tree/master/0x00-python-hello_world)
+# Directories
+## [0x00-python-hello_world/](https://github.com/awinabaab/alx-higher_level_programming/tree/master/0x00-python-hello_world)
    - How to use the Python interpreter
    - How to print text and variables using print
    - How to use strings
    - What are indexing and slicing and Python
    - What is the official codig style and how check your code with `pycodestyle`
 
-### [0x01-python-if_else_loops_functions/](https://github.com/awinabaab/alx-higher_level_programming/tree/master/0x01-python-if_else_loops_functions)
+## [0x01-python-if_else_loops_functions/](https://github.com/awinabaab/alx-higher_level_programming/tree/master/0x01-python-if_else_loops_functions)
    - Why indentation is so important in Python
    - How to use the `if`, `if` ... `else` statements
    - How to use comments
@@ -44,7 +45,7 @@
    - What’s a `traceback`
    - What are the arithmetic operators and how to use them
 
-### [0x02-python-import_modules](https://github.com/awinabaab/alx-higher_level_programming/tree/master/0x02-python-import_modules)
+## [0x02-python-import_modules](https://github.com/awinabaab/alx-higher_level_programming/tree/master/0x02-python-import_modules)
    - How to import functions from another file
    - How to use imported functions
    - How to create a module
