@@ -84,4 +84,3 @@
       9 BINARY_POWER
       10 BINARY_ADD
       11 RETURN_VALUE
-   ```
