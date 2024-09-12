@@ -13,7 +13,7 @@
    - The program should print: `<a value> + <b value> = <add(a, b) value>` followed with a new line
 
 ## [1-calculation.py](https://github.com/awinabaab/alx-higher_level_programming/blob/master/0x02-python-import_modules/1-calculation.py)
-   A program that imports functions from the file calculator_1.py, does some Maths, and prints the result.
+   A program that imports functions from the file `calculator_1.py`, does some Maths, and prints the result.
 
 ## [2-args.py](https://github.com/awinabaab/alx-higher_level_programming/blob/master/0x02-python-import_modules/2-args.py)
    A program that prints the number of and the list of its command line arguments.
@@ -30,7 +30,7 @@
    A program that imports the variable `a` from the file `variable_load_5.py` and prints its value.
 
 ## [100-my_calculator.py](https://github.com/awinabaab/alx-higher_level_programming/blob/master/0x02-python-import_modules/100-my_calculator.py)
-   A program that imports all functions from the file calculator_1.py and handles basic operations.
+   A program that imports all functions from the file `calculator_1.py` and handles basic operations.
    - Usage: `./100-my_calculator.py a operator b`
    - If the number of arguments is not 3, your program has to:\
    print `Usage: ./100-my_calculator.py <a> <operator> <b>` followed with a new line\
