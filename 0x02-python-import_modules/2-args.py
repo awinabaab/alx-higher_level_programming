@@ -8,4 +8,4 @@ if __name__ == "__main__":
           "arguments" if (arg_num > 1 or arg_num == 0) else "argument",
           ':' if (arg_num >= 1) else '.'))
     for argc in range(1, argv_len):
-        print("{:d}: ".format(argc), "{}".format(sys.argv[argc]))
+        print("{:d}:".format(argc), "{}".format(sys.argv[argc]))
