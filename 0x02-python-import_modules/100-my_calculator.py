@@ -18,18 +18,10 @@ if __name__ == "__main__":
             sys.exit(1)
         else:
             if operator == '+':
-                print("{:d} {}".format(a, operator),
-                      "{:d} =".format(b),
-                      "{:d}".format(add(a, b)))
+                print("{:d} {} {:d} = {:d}".format(a, operator, b, add(a, b)))
             elif operator == '-':
-                print("{:d} {}".format(a, operator),
-                      "{:d} =".format(b),
-                      "{:d}".format(sub(a, b)))
+                print("{:d} {} {:d} = {:d}".format(a, operator, b, sub(a, b)))
             elif operator == '*':
-                print("{:d} {}".format(a, operator),
-                      "{:d} =".format(b),
-                      "{:d}".format(mul(a, b)))
+                print("{:d} {} {:d} = {:d}".format(a, operator, b, mul(a, b)))
             elif operator == '/':
-                print("{:d} {}".format(a, operator),
-                      "{:d} =".format(b),
-                      "{:d}".format(div(a, b)))
+                print("{:d} {} {:d} = {:d}".format(a, operator, b, div(a, b)))
