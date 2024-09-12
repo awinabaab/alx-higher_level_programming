@@ -7,19 +7,27 @@
   - All scripts and progrmas were created, compiled and tested on an\
    Ubuntu 20.04 environment
 
-# Usage
-  - All `C` programs were compiled using `gcc -Wall -Werror -Wextra -pedantic -std=gnu89 <file(s)>`
-  - Python programs can be run directly on Unix systems `./<filename>` or\
-    `python3 <filename>`
+## Usage
+  1. Clone the repository
+     `git clone https://github.com/awinabaab/alx-higher_level_programming.git`
+  2. Navigate to the clone repository directory
+     `cd alx-higher_level_programming`
+  3. For C files, compile and run
+     ```
+     gcc -Werror -Wall -Wextra -pedantic -std=gnu89 <filename(s)> -o <execubale_filename>
+     ./<executable_filename>
+     ```
+  4. Run Python scripts using:
+     `python3 <filename>` or `./filename`
 
-## [0x00-python-hello_world/](https://github.com/awinabaab/alx-higher_level_programming/tree/master/0x00-python-hello_world)
+### [0x00-python-hello_world/](https://github.com/awinabaab/alx-higher_level_programming/tree/master/0x00-python-hello_world)
    - How to use the Python interpreter
    - How to print text and variables using print
    - How to use strings
    - What are indexing and slicing and Python
    - What is the official codig style and how check your code with `pycodestyle`
 
-## [0x01-python-if_else_loops_functions/](https://github.com/awinabaab/alx-higher_level_programming/tree/master/0x01-python-if_else_loops_functions)
+### [0x01-python-if_else_loops_functions/](https://github.com/awinabaab/alx-higher_level_programming/tree/master/0x01-python-if_else_loops_functions)
    - Why indentation is so important in Python
    - How to use the `if`, `if` ... `else` statements
    - How to use comments
@@ -35,3 +43,11 @@
    - Scope of variables
    - What’s a `traceback`
    - What are the arithmetic operators and how to use them
+
+### [0x02-python-import_modules](https://github.com/awinabaab/alx-higher_level_programming/tree/master/0x02-python-import_modules)
+   - How to import functions from another file
+   - How to use imported functions
+   - How to create a module
+   - How to use the built-in function dir()
+   - How to prevent code in your script from being executed when imported
+   - How to use command line arguments with your Python programs
