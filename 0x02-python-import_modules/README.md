@@ -51,8 +51,8 @@
 ## [102-magic_calculation.py](https://github.com/awinabaab/alx-higher_level_programming/blob/master/0x02-python-import_modules/102-magic_calculation.py)
    A Python function `def magic_calculation(a, b)`: that does exactly the same as the following Python bytecode:
    ```
-    3		0 LOAD_CONST		1 (0)
-    		3 LOAD_CONST		2 (('add', 'sub'))
+   3		0 LOAD_CONST		1 (0)
+   		3 LOAD_CONST		2 (('add', 'sub'))
 		6 IMPORT_NAME		0 (magic_calculation_102)
 		9 IMPORT_FROM		1 (add)
 		12 STORE_FAST		2 (add)
@@ -60,18 +60,18 @@
 		18 STORE_FAST		3 (sub)
 		21 POP_TOP
 
-  4		22 LOAD_FAST		0 (a)
+   4		22 LOAD_FAST		0 (a)
   		25 LOAD_FAST		1 (b)
 		28 COMPARE_OP		0 (<)
 		31 POP_JUMP_IF_FALSE	94
 
-  5		34 LOAD_FAST		2 (add)
+   5		34 LOAD_FAST		2 (add)
   		37 LOAD_FAST		0 (a)
 		40 LOAD_FAST		1 (b)
 		43 CALL_FUNCTION	2 (2 positional, 0 keyword pair)
 		46 STORE_FAST		4 (c)
 
-  6		49 SETUP_LOOP		38 (to 90)
+   6		49 SETUP_LOOP		38 (to 90)
   		52 LOAD_GLOBAL		3 (range)
 		55 LOAD_CONST		3 (4)
 		58 LOAD_CONST		4 (6)
@@ -98,7 +98,7 @@
 		106 RETURN_VALUE
 		107 LOAD_CONST		0 (None)
 		110 RETURN_VALUE
-
+   ```
 
 ## [103-fast_alphabet.c](https://github.com/awinabaab/alx-higher_level_programming/blob/master/0x02-python-import_modules/103-fast_alphabet.py)
    A program that prints the alphabet in uppercase, followed by a new line.
