@@ -21,19 +21,15 @@ if __name__ == "__main__":
                 print("{:d} {}".format(a, operator),
                       "{:d} =".format(b),
                       "{:d}".format(add(a, b)))
-                sys.exit(1)
             elif operator == '-':
                 print("{:d} {}".format(a, operator),
                       "{:d} =".format(b),
                       "{:d}".format(sub(a, b)))
-                sys.exit(1)
             elif operator == '*':
-                print("{:d} {} ".format(a, operator),
+                print("{:d} {}".format(a, operator),
                       "{:d} =".format(b),
                       "{:d}".format(mul(a, b)))
-                sys.exit(1)
             elif operator == '/':
                 print("{:d} {}".format(a, operator),
                       "{:d} =".format(b),
                       "{:d}".format(div(a, b)))
-                sys.exit(1)
