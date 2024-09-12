@@ -34,7 +34,7 @@
    - Usage: `./100-my_calculator.py a operator b`
    - If the number of arguments is not 3, your program has to:\
    print `Usage: ./100-my_calculator.py <a> <operator> <b>` followed with a new line\
-    and exit with the value 1
+    and `exit` with the value `1`
    - operator can be:
    `+` for addition
    `-` for subtraction
@@ -42,7 +42,7 @@
    `/` for division
    - If the operator is not one of the above:\
    print `Unknown operator. Available operators: +, -, * and /` followed with a new line\
-   and exit with the value 1
+   and `exit` with the value `1`
    - The result should be printed like this: `<a> <operator> <b> = <result>`, followed by a new line
 
 ## [101-easy_print.py](https://github.com/awinabaab/alx-higher_level_programming/blob/master/0x02-python-import_modules/101-easy_print.py)
