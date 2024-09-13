@@ -1,4 +1,4 @@
-# ALX Higher Level Programming
+i# ALX Higher Level Programming
   - This repository is a collection of directories containing a combination of\
    `bash` scripts `C` programs and `Python` scripts as part of my\
    Fullstack Software Engineering learning journey with ALX
@@ -52,3 +52,16 @@
    - How to use the built-in function dir()
    - How to prevent code in your script from being executed when imported
    - How to use command line arguments with your Python programs
+
+## [0x03-python-data_structures](https://github.com/awinabaab/alx-higher_level_programming/tree/master/0x03-python-data_structures)
+   - What are lists and how to use them
+   - What are the differences and similarities between strings and lists
+   - What are the most common methods of lists and how to use them
+   - How to use lists as stacks and queues
+   - What are list comprehensions and how to use them
+   - What are tuples and how to use them
+   - When to use tuples versus lists
+   - What is a sequence
+   - What is tuple packing
+   - What is sequence unpacking
+   - What is the `del` statement and how to use it
