@@ -61,37 +61,6 @@ listint_t *duplicate_list(listint_t **head)
 }
 
 /**
- * add_nodeint_end - Adds node to the end of a singly linked list
- * @head: Pointer to the head node of the singly linked list
- * @n: Node data
- *
- * Return: Pointer to new node
- */
-
-listint_t *add_nodeint_end(listint_t **head, const int n)
-{
-	listint_t *current_node = *head;
-	listint_t *new_node;
-
-	new_node = malloc(sizeof(listint_t));
-	if (!new_node)
-		return (NULL);
-	new_node->n = n;
-	new_node->next = NULL;
-
-	if (!*head)
-		*head = new_node;
-	else
-	{
-		while (current_node->next)
-			current_node = current_node->next;
-		current_node->next = new_node;
-	}
-
-	return (new_node);
-}
-
-/**
  * reverse_list - Reverses a singly linked list
  * @head: Pointer to the head node of the singly linked list
  *
@@ -117,21 +86,4 @@ listint_t *reverse_list(listint_t **head)
 	head_node = current_node;
 
 	return (head_node);
-}
-
-/**
- * free_listint - Frees a linked list
- * @head: Linked list
- */
-
-void free_listint(listint_t *head)
-{
-	listint_t *current_node;
-
-	while (head != NULL)
-	{
-		current_node = head;
-		head = head->next;
-		free(current_node);
-	}
 }
