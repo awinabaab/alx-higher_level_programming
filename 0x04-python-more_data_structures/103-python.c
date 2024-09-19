@@ -80,7 +80,6 @@ void print_python_bytes(PyObject *p)
 			else
 				printf(" ");
 		}
-		printf("\n");
 	}
 	else
 		printf(" [ERROR] Invalid Bytes Object\n");
