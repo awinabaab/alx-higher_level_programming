@@ -34,8 +34,6 @@ void print_python_list(PyObject *p)
 				print_python_bytes(list_item);
 		}
 	}
-	else
-		fprintf(stderr, "The PyObject p is not a Python List.\n");
 }
 
 /**
