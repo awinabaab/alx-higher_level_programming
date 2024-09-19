@@ -12,11 +12,18 @@ void print_python_bytes(PyObject *p);
 
 void print_python_list(PyObject *p)
 {
-	Py_ssize_t size;
+	Py_ssize_t size = 0;
 	PyObject *list_item = NULL;
 	PyListObject *list_object = (PyListObject *) p;
 	const char *type = NULL;
 	Py_ssize_t index = 0;
+
+	if (!p)
+		return;
+
+	list_object = (PyListObject *) p;
+	if (!list_object)
+		return;
 
 	if (PyList_Check(p))
 	{
@@ -43,10 +50,20 @@ void print_python_list(PyObject *p)
 
 void print_python_bytes(PyObject *p)
 {
-	PyBytesObject *bytes_object = (PyBytesObject *) p;
-	Py_ssize_t size = bytes_object->ob_base.ob_size;
-	Py_ssize_t max_bytes_size = (size > 10 ? 10 : size + 1);
+	PyBytesObject *bytes_object = NULL;
+	Py_ssize_t size = 0;
+	Py_ssize_t max_bytes_size = 0;
 	Py_ssize_t index = 0;
+
+	if (!p)
+		return;
+
+	bytes_object = (PyBytesObject *) p;
+	if (!bytes_object)
+		return;
+
+	size = bytes_object->ob_base.ob_size;
+	max_bytes_size = (size > 10 ? 10 : size + 1);
 
 	printf("[.] bytes object info\n");
 	if (PyBytes_Check(bytes_object))
@@ -56,7 +73,13 @@ void print_python_bytes(PyObject *p)
 		printf("  first %zd bytes: ", max_bytes_size);
 
 		for (index = 0; index < max_bytes_size; index++)
-			printf("%02x ", bytes_object->ob_sval[index]);
+		{
+			printf("%02x", bytes_object->ob_sval[index]);
+			if (index == max_bytes_size - 1)
+				printf("\n");
+			else
+				printf(" ");
+		}
 		printf("\n");
 	}
 	else
