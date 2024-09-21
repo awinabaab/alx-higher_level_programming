@@ -1,4 +1,4 @@
-i# ALX Higher Level Programming
+# ALX Higher Level Programming
   - This repository is a collection of directories containing a combination of\
    `bash` scripts `C` programs and `Python` scripts as part of my\
    Fullstack Software Engineering learning journey with ALX
@@ -45,7 +45,7 @@ i# ALX Higher Level Programming
    - What’s a `traceback`
    - What are the arithmetic operators and how to use them
 
-## [0x02-python-import_modules](https://github.com/awinabaab/alx-higher_level_programming/tree/master/0x02-python-import_modules)
+## [0x02-python-import_modules/](https://github.com/awinabaab/alx-higher_level_programming/tree/master/0x02-python-import_modules)
    - How to import functions from another file
    - How to use imported functions
    - How to create a module
@@ -53,7 +53,7 @@ i# ALX Higher Level Programming
    - How to prevent code in your script from being executed when imported
    - How to use command line arguments with your Python programs
 
-## [0x03-python-data_structures](https://github.com/awinabaab/alx-higher_level_programming/tree/master/0x03-python-data_structures)
+## [0x03-python-data_structures/](https://github.com/awinabaab/alx-higher_level_programming/tree/master/0x03-python-data_structures)
    - What are lists and how to use them
    - What are the differences and similarities between strings and lists
    - What are the most common methods of lists and how to use them
@@ -65,3 +65,15 @@ i# ALX Higher Level Programming
    - What is tuple packing
    - What is sequence unpacking
    - What is the `del` statement and how to use it
+
+## [0x04-python-more_data_structures/](https://github.com/awinabaab/alx-higher_level_programming/tree/master/0x04-python-more_data_structures)
+   - What are sets and how to use them
+   - What are the most common methods of set and how to use them
+   - When to use sets versus lists
+   - How to iterate into a set
+   - What are dictionaries and how to use them
+   - When to use dictionaries versus lists or sets
+   - What is a key in a dictionary
+   - How to iterate over a dictionary
+   - What is a lambda function
+   - What are the map, reduce and filter functions
