@@ -113,7 +113,10 @@ void print_python_float(PyObject *p)
 
 	fprintf(stdout, "[.] float object info\n");
 	if (PyFloat_Check(p))
-		fprintf(stdout, "  value: %.16g\n", float_obj_value);
+		if (float_obj_value == (int)float_obj_value)
+			fprintf(stdout, "  value: %.1f\n", float_obj_value);
+		else
+			fprintf(stdout, "  value: %.16g\n", float_obj_value);
 	else
 	{
 		fflush(stdout);
