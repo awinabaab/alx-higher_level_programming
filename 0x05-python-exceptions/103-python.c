@@ -92,7 +92,7 @@ void print_python_bytes(PyObject *p)
 	else
 	{
 		fflush(stdout);
-		printf("  [ERROR] Invalid Bytes Object\n");
+		fprintf(stderr, "  [ERROR] Invalid Bytes Object\n");
 	}
 }
 
@@ -105,18 +105,21 @@ void print_python_float(PyObject *p)
 	PyFloatObject *float_obj = NULL;
 	double float_obj_value = 0.0;
 
+	if (!p)
+		return;
+
 	float_obj = ((PyFloatObject *)p);
 	if (!float_obj)
 		return;
 
 	float_obj_value = float_obj->ob_fval;
 
-	fprintf(stdout, "[.] float object info\n");
+	printf("[.] float object info\n");
 	if (PyFloat_Check(p))
 		if (float_obj_value == (int)float_obj_value)
-			fprintf(stdout, "  value: %.1f\n", float_obj_value);
+			printf("  value: %.1f\n", float_obj_value);
 		else
-			fprintf(stdout, "  value: %.16g\n", float_obj_value);
+			printf("  value: %.16g\n", float_obj_value);
 	else
 	{
 		fflush(stdout);
