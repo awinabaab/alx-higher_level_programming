@@ -104,6 +104,7 @@ void print_python_float(PyObject *p)
 {
 	PyFloatObject *float_obj = NULL;
 	double float_obj_value = 0.0;
+	char *buffer = NULL;
 
 	if (!p)
 		return;
@@ -115,10 +116,12 @@ void print_python_float(PyObject *p)
 
 	printf("[.] float object info\n");
 	if (PyFloat_Check(p))
-		if (float_obj_value == (int)float_obj_value)
-			printf("  value: %.1f\n", float_obj_value);
-		else
-			printf("  value: %.16g\n", float_obj_value);
+	{
+		buffer = PyOS_double_to_string(float_obj_value, 'r', 0, Py_DTSF_ADD_DOT_0, NULL);
+		printf("  value: %s\n", buffer);
+		PyMem_Free(buffer);
+
+	}
 	else
 	{
 		fflush(stdout);
