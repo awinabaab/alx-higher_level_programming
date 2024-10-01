@@ -57,7 +57,7 @@ class Node:
             TypeError: value is not a Node object
         """
 
-        if not isinstance(value, Node):
+        if not isinstance(value, Node) and value:
             raise TypeError("next_node must be a Node object")
         self.__next_node = value
 
