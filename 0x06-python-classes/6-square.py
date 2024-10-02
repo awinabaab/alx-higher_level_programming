@@ -11,14 +11,11 @@ class Square:
 
         Args:
             size (int): size of the Square object
+            position (tuple): tuple of two integers
         """
 
-        if not isinstance(size, int):
-            raise TypeError("size must be an integer")
-        if size < 0:
-            raise ValueError("size must be >= 0")
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
