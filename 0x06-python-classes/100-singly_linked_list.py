@@ -14,8 +14,8 @@ class Node:
             data: data element of the node
             next_node: reference to the next node
         """
-        self.__data = data
-        self.__next_node = next_node
+        self.data = data
+        self.next_node = next_node
 
     @property
     def data(self):
@@ -57,7 +57,7 @@ class Node:
             TypeError: value is not a Node object
         """
 
-        if not isinstance(value, Node) and value:
+        if value and not isinstance(value, Node):
             raise TypeError("next_node must be a Node object")
         self.__next_node = value
 
