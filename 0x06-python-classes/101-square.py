@@ -101,4 +101,4 @@ class Square:
             print_values += "\n"
         for square in range(0, self.__size):
             print_values += " " * self.__position[0] + "#" * self.__size + "\n"
-        return print_values
+        return (print_values[:-1])
