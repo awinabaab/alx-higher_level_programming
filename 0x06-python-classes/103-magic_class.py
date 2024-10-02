@@ -6,6 +6,10 @@ import math
 
 
 class MagicClass:
+    """
+    Defines a magic class
+    """
+
     def __init__(self, radius=0):
         """
         Initializes and instance
