@@ -1,0 +1,109 @@
+The ``0-add_integer.py`` module
+===============================
+
+Using ``add_integer``
+---------------------
+
+>>> add_integer = __import__("0-add_integer").add_integer
+
+Numbers
+=======
+>>> add_integer(32, 5)
+37
+
+>>> add_integer(64.67, 28.52)
+92
+
+>>> add_integer(-90, 80)
+-10
+
+>>> add_integer(80, -90)
+-10
+
+>>> add_integer(100, -90)
+10
+
+>>> add_integer(-1, -1)
+-2
+
+>>> add_integer(-1, 1)
+0
+
+>>> add_integer(2)
+100
+
+>>> add_integer()
+Traceback (most recent call last):
+TypeError: add_integer() missing 1 required positional argument: 'a'
+
+>>> add_integer(b=5)
+Traceback (most recent call last):
+TypeError: add_integer() missing 1 required positional argument: 'a'
+
+>>> add_integer(2.5, 10)
+12
+
+>>> add_integer(2.5, 2.5)
+4
+
+>>> add_integer(float('inf'), 2.5)
+Traceback (most recent call last):
+OverflowError: cannot convert float infinity to integer
+
+>>> add_integer(float('nan'), 2.5)
+Traceback (most recent call last):
+ValueError: cannot convert float NaN to integer
+
+>>> add_integer(int('inf'), 2.5)
+Traceback (most recent call last):
+ValueError: invalid literal for int() with base 10: 'inf'
+
+>>> add_integer(int('nan'), 2.5)
+Traceback (most recent call last):
+ValueError: invalid literal for int() with base 10: 'nan'
+
+Characters
+======================
+>>> add_integer('a', 34)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer('a', -34)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer(34, 'a')
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+>>> add_integer(-34, 'a')
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+Strings
+======================
+>>> add_integer("Holberton", 34)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer(34, "Holberton")
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+Data Structures
+===============
+>>> add_integer({}, 28.52)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer(22.6, {})
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+>>> add_integer((), 28.52)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer(34, ())
+Traceback (most recent call last):
+TypeError: b must be an integer
