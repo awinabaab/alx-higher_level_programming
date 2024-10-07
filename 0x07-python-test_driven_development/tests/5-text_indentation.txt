@@ -1,0 +1,108 @@
+The ``5-text_indentation.py`` module
+====================================
+
+Using ``text_indentation``
+--------------------------
+
+>>> text_indentation = __import__("5-text_indentation").text_indentation
+
+Numbers
+=======
+Trying an integer
+-----------------
+>>> text_indentation(100)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation(0)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation(-1)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+
+Trying a float
+--------------
+>>> text_indentation(10.8)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation(0.0)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation(-1.5)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+
+Strings
+=======
+>>> text_indentation("Lorem ipsum dolor sit amet: consectetur?adipiscing elit")
+Lorem ipsum dolor sit amet:
+<BLANKLINE>
+consectetur?
+<BLANKLINE>
+adipiscing elit
+
+>>> text_indentation("")
+
+
+Data Structures
+===============
+Trying tuples
+-------------
+>>> text_indentation(())
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation(('a', 'b', 'c', 'd', 'e'))
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation((1, 2, 3, 4, 5))
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation((-1, -2, -3, -4, -5))
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation((1.2, 2.4, 3.6, 4.8, 5.10))
+Traceback (most recent call last):
+TypeError: text must be a string
+
+Trying lists
+------------
+>>> text_indentation([])
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation(['a', 'b', 'c', 'd', 'e'])
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation([1, 2, 3, 4, 5])
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation([-1, -2, -3, -4, -5])
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation([1.2, 2.4, 3.6, 4.8, 5.10])
+Traceback (most recent call last):
+TypeError: text must be a string
+
+
+Trying dictionaries
+-------------------
+>>> text_indentation({})
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation({'a': 97, 'b': 98, 'c': 99, 'd': 100, 'e': 101})
+Traceback (most recent call last):
+TypeError: text must be a string
