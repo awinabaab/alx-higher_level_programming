@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-"""A module that defines a Rectangle class
+"""The Rectangle class module
 """
 
 
 class Rectangle:
-    """A class that defines a rectangle
+    """The rectangle class definition
     """
 
     def __init__(self, width=0, height=0):
@@ -31,6 +31,10 @@ class Rectangle:
 
         Args:
             value (int): value for ``width``
+
+        Raises:
+            TypeError: if value is not an integer
+            ValueError: if value < 0
         """
 
         if not isinstance(value, int):
@@ -45,11 +49,18 @@ class Rectangle:
         """Getter for private instance attribute ``height``
         """
 
-        return (self.__heigth)
+        return (self.__height)
 
     @height.setter
     def height(self, value):
         """Setter for private instance attribute ``height``
+
+        Args:
+            value (int): value for ``height``
+
+        Raises:
+            TypeError: if value is not an integer
+            ValueError: if vale < 0
         """
 
         if not isinstance(value, int):
@@ -57,4 +68,4 @@ class Rectangle:
         if value < 0:
             raise ValueError("height must be >= 0")
 
-        self.__heigth = value
+        self.__height = value
