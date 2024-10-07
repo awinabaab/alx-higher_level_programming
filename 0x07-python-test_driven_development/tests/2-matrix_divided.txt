@@ -1,0 +1,113 @@
+The ``2-matrix_divided.py`` module
+===============================
+
+Using ``matrix_divided``
+------------------------
+
+>>> matrix_divided = __import__("2-matrix_divided").matrix_divided
+>>> ueq_matrix = [[1, 2, 3, 4, 5], [6, 7, 8, 9, 10, 11]]
+>>> eq_matrix_int = [[1, 2, 3, 4, 5], [6, 7, 8, 9, 10]]
+>>> eq_matrix_float = [[1.2, 2.4, 3.6, 4.8, 5.10], [6.12, 7.14, 8.16, 9.18, 10.20]]
+>>> char_matrix = [[1, 2, 'a', 4, 5], [6, 7, 8, 9, 10]]
+>>> str_matrix = [[1, 2, 3, 4, 5], [6, 7, 8, "holberton", 10]]
+>>> dict_matrix = [{'a': 97, 'b': 98, 'c': 99}, [1, 2, 3]]
+>>> dictionary = {'a': 97, 'b': 98, 'c': 99}
+>>> tup = (2, 4, 6, 8)
+
+
+Numbers
+=======
+Trying a matrix of unequal length
+---------------------------------
+>>> matrix_divided(ueq_matrix, 3)
+Traceback (most recent call last):
+TypeError: Each row of the matrix must have the same size
+
+Trying an integer matrix of equal length and dividing by an int
+---------------------------------------------------------------
+>>> matrix_divided(eq_matrix_int, 3)
+[[0.33, 0.67, 1.0, 1.33, 1.67], [2.0, 2.33, 2.67, 3.0, 3.33]]
+
+Trying an integer matrix of equal length and dividing by a float
+----------------------------------------------------------------
+>>> matrix_divided(eq_matrix_int, 2.75)
+[[0.36, 0.73, 1.09, 1.45, 1.82], [2.18, 2.55, 2.91, 3.27, 3.64]]
+
+Trying an float matrix of equal length and dividing by an int
+-------------------------------------------------------------
+>>> matrix_divided(eq_matrix_float, 3)
+[[0.4, 0.8, 1.2, 1.6, 1.7], [2.04, 2.38, 2.72, 3.06, 3.4]]
+
+Trying an float matrix of equal length and dividing by an float
+---------------------------------------------------------------
+>>> matrix_divided(eq_matrix_float, 2.75)
+[[0.44, 0.87, 1.31, 1.75, 1.85], [2.23, 2.6, 2.97, 3.34, 3.71]]
+
+Trying a matrix of equal length and dividing by zero
+----------------------------------------------------
+>>> matrix_divided(eq_matrix_int, 0)
+Traceback (most recent call last):
+ZeroDivisionError: division by zero
+
+
+Characters
+==========
+Trying a matrix of unequal length and dividing by a char
+--------------------------------------------------------
+>>> matrix_divided(ueq_matrix, 'a')
+Traceback (most recent call last):
+TypeError: Each row of the matrix must have the same size
+
+Trying a matrix of equal length and dividing by a char
+------------------------------------------------------
+>>> matrix_divided(eq_matrix_int, 'a')
+Traceback (most recent call last):
+TypeError: div must be a number
+
+Trying a matrix of equal length containing chars and dividing by a char
+-----------------------------------------------------------------------
+>>> matrix_divided(char_matrix, 'a')
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
+Strings
+==========
+Trying a matrix of unequal length and dividing by a string
+----------------------------------------------------------
+>>> matrix_divided(ueq_matrix, "Holberton")
+Traceback (most recent call last):
+TypeError: Each row of the matrix must have the same size
+
+Trying a matrix of equal length and dividing by a string
+--------------------------------------------------------
+>>> matrix_divided(eq_matrix_int, "Holberton")
+Traceback (most recent call last):
+TypeError: div must be a number
+
+Trying a matrix of equal length containing a string and dividing by a string
+----------------------------------------------------------------------------
+>>> matrix_divided(str_matrix, "Holberton")
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
+Data Structures
+===============
+Trying a matrix of equal length containing a dictionary
+-------------------------------------------------------
+>>> matrix_divided(dict_matrix, 3)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Trying a dictionary in place of the matrix
+------------------------------------------
+>>> matrix_divided(dictionary, 3)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Trying a tup in place of the matrix
+-----------------------------------
+>>> matrix_divided(tup, 3)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
