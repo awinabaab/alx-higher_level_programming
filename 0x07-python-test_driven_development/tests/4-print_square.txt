@@ -1,0 +1,78 @@
+The ``4-print_square.py`` module
+================================
+
+Using ``print_square``
+----------------------
+
+>>> print_square = __import__("4-print_square").print_square
+
+Numbers
+=======
+>>> print_square(4)
+####
+####
+####
+####
+
+>>> print_square(10)
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+
+>>> print_square(0)
+
+>>> print_square(1)
+#
+
+>>> print_square(-1)
+Traceback (most recent call last):
+ValueError: size must be >= 0
+
+
+Characters and Strings
+======================
+>>> print_square('a')
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+>>> print_square("Holberton")
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+
+Data Structures
+===============
+>>> print_square({})
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+>>> print_square({'a': 7, 'b': 8})
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+>>> print_square(tuple())
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+>>> print_square(tuple((1, 2, 3, 4, 5)))
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+>>> print_square(tuple(('a', 'b', 'c', 'd', 'e')))
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+>>> print_square([1, 2, 3, 4, 5])
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+>>> print_square(['a', 'b', 'c', 'd', 'e'])
+Traceback (most recent call last):
+TypeError: size must be an integer
