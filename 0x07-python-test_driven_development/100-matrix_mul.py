@@ -25,9 +25,9 @@ def matrix_mul(m_a, m_b):
     if not isinstance(m_b, list):
         raise TypeError("m_b must be a list")
     if not all(isinstance(mat, list) for mat in m_a):
-        raise TypeError("m_a must be a list of list")
+        raise TypeError("m_a must be a list of lists")
     if not all(isinstance(mat, list) for mat in m_b):
-        raise TypeError("m_b must be a list of list")
+        raise TypeError("m_b must be a list of lists")
     if all(len(mat) == 0 for mat in m_a):
         raise ValueError("m_a can't be empty")
     if all(len(mat) == 0 for mat in m_b):
