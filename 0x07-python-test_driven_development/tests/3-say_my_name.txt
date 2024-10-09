@@ -20,22 +20,22 @@ TypeError: last_name must be a string
 Characters
 ==========
 >>> say_my_name('A', "Kwame")
-A Kwame
+My name is A Kwame
 
 >>> say_my_name("Kwame", 'A')
-Kwame A
+My name is Kwame A
 
 
 Strings
 =======
 >>> say_my_name("Kwame", "Gyamfi")
-Kwame Gyamfi
+My name is Kwame Gyamfi
 
 >>> say_my_name("", "Gyamfi")
- Gyamfi
+My name is  Gyamfi
 
 >>> say_my_name("Kwame")
-Kwame 
+My name is Kwame 
 
 >>> say_my_name("")
-<BLANKLINE> 
+My name is  
