@@ -35,10 +35,13 @@ My name is Kwame Gyamfi
 My name is  Gyamfi
 
 >>> say_my_name("Kwame")
-My name is Kwame 
+Traceback (most recent call last):
+TypeError: say_my_name() missing 1 required positional argument: 'last_name'
 
 >>> say_my_name("")
-My name is  
+Traceback (most recent call last):
+TypeError: say_my_name() missing 1 required positional argument: 'last_name'
 
 >>> say_my_name()
-My name is  
+Traceback (most recent call last):
+TypeError: say_my_name() missing 2 required positional arguments: 'first_name' and 'last_name'
