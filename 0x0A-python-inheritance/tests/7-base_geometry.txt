@@ -1,0 +1,60 @@
+The ```7-base_geometry.py`` module
+==================================
+
+Using BaseGeometry
+------------------
+
+>>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
+>>> bg = BaseGeometry()
+
+Testing the area method
+-----------------------
+>>> bg.area()
+Traceback (most recent call last):
+Exception: area() is not implemented
+
+
+Testing the integer_validator method
+------------------------------------
+>>> bg.integer_validator()
+Traceback (most recent call last):
+TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+>>> bg.integer_validator(name="square")
+Traceback (most recent call last):
+TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+
+>>> bg.integer_validator(value=2)
+Traceback (most recent call last):
+TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'name'
+
+>>> bg.integer_validator("size", list((1, 2, 3, 4)))
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+>>> bg.integer_validator("size", tuple())
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+>>> bg.integer_validator("size", dict())
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+>>> bg.integer_validator("size", set((1, 2, 3)))
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+>>> bg.integer_validator("size", 0)
+Traceback (most recent call last):
+ValueError: size must be greater than 0
+
+>>> bg.integer_validator("size", -5)
+Traceback (most recent call last):
+ValueError: size must be greater than 0
+
+>>> bg.integer_validator("size", 10)
+10
+
+>>> bg.integer_validator(10, -5)
+Traceback (most recent call last):
+ValueError: 10 must be greater than 0
