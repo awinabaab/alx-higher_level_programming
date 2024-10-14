@@ -64,3 +64,10 @@ Trying non-integer list
 >>> my_list.append('x')
 >>> my_list.print_sorted()
 ['a', 'b', 'c', 'x', 'y', 'z']
+
+Trying an inbuilt list object
+-----------------------------
+>>> a_list = [1, 7, 3, 9]
+>>> a_list.print_sorted()
+Traceback (most recent call last):
+AttributeError: 'list' object has no attribute 'print_sorted'
