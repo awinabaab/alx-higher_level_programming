@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""lookup dunction module
+"""0-lookup.py function module
 """
 
 
