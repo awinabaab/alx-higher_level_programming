@@ -1,0 +1,99 @@
+The ``1-my_list.py`` module
+===========================
+
+Using ``my_list``
+-----------------
+>>> MyList = __import__("1-my_list").MyList
+>>> empty_list = MyList()
+>>> int_list = MyList()
+>>> char_list = MyList()
+>>> float_list = MyList()
+>>> tuple_list = MyList()
+>>> dict_list = MyList()
+>>> string_list = MyList()
+
+Trying an empty list
+--------------------
+>>> empty_list.print_sorted()
+[]
+
+Trying a list of integers
+-------------------------
+>>> int_list.append(2)
+>>> int_list.append(6)
+>>> int_list.append(4)
+>>> int_list.append(10)
+>>> int_list.append(8)
+>>> int_list.append(22)
+>>> int_list.append(14)
+
+>>> int_list.print_sorted()
+[2, 4, 6, 8, 10, 14, 22]
+
+Trying a list of characters
+---------------------------
+>>> char_list.append('a')
+>>> char_list.append('z')
+>>> char_list.append('b')
+>>> char_list.append('y')
+>>> char_list.append('c')
+>>> char_list.append('x')
+>>> char_list.append('d')
+>>> char_list.append('w')
+
+>>> char_list.print_sorted()
+['a', 'b', 'c', 'd', 'w', 'x', 'y', 'z']
+
+Trying a list floats
+--------------------
+>>> float_list.append(2.4)
+>>> float_list.append(6.12)
+>>> float_list.append(4.8)
+>>> float_list.append(10.20)
+>>> float_list.append(8.16)
+>>> float_list.append(22.44)
+>>> float_list.append(14.28)
+
+>>> float_list.print_sorted()
+[2.4, 4.8, 6.12, 8.16, 10.2, 14.28, 22.44]
+
+Trying a list tuples
+--------------------
+>>> tuple_list.append((2, 4))
+>>> tuple_list.append((6, 12))
+>>> tuple_list.append((4, 8))
+>>> tuple_list.append((10, 20))
+>>> tuple_list.append((8, 16))
+>>> tuple_list.append((22, 44))
+>>> tuple_list.append((14, 28))
+
+>>> tuple_list.print_sorted()
+[(2, 4), (4, 8), (6, 12), (8, 16), (10, 20), (14, 28), (22, 44)]
+
+Trying a list dictionaries
+--------------------
+>>> dict_list.append({'z': 122})
+>>> dict_list.append({'a': 97})
+>>> dict_list.append({'y': 121})
+>>> dict_list.append({'b': 98})
+>>> dict_list.append({'x': 120})
+>>> dict_list.append({'c': 99})
+>>> dict_list.append({'w': 119})
+
+>>> dict_list.print_sorted()
+Traceback (most recent call last):
+TypeError: '<' not supported between instances of 'dict' and 'dict'
+
+Trying a list of strings
+---------------------------
+>>> string_list.append('Holberton')
+>>> string_list.append('School')
+>>> string_list.append('is')
+>>> string_list.append('the')
+>>> string_list.append('best')
+>>> string_list.append('in')
+>>> string_list.append('the')
+>>> string_list.append('world')
+
+>>> string_list.print_sorted()
+['Holberton', 'School', 'best', 'in', 'is', 'the', 'the', 'world']
