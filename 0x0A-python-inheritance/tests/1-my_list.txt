@@ -55,6 +55,12 @@ Trying an already sorted list
 
 Trying non-integer list
 -----------------------
->>> my_list = MyList(['a', 'b', 'c', 'x', 'y', 'z'])
+>>> my_list = MyList()
+>>> my_list.append('a')
+>>> my_list.append('z')
+>>> my_list.append('b')
+>>> my_list.append('y')
+>>> my_list.append('c')
+>>> my_list.append('x')
 >>> my_list.print_sorted()
 ['a', 'b', 'c', 'x', 'y', 'z']
