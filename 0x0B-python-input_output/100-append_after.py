@@ -15,4 +15,5 @@ def append_after(filename="", search_string="", new_string=""):
             if search_string in line:
                 lines.append(new_string)
         f.truncate(0)
+        f.seek(0)
         f.writelines(lines)
