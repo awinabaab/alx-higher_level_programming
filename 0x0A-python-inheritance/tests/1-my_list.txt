@@ -71,3 +71,10 @@ Trying an inbuilt list object
 >>> a_list.print_sorted()
 Traceback (most recent call last):
 AttributeError: 'list' object has no attribute 'print_sorted'
+
+>>> a_list = [1, 7, 3, 9]
+>>> a_list.__str__()
+'[1, 7, 3, 9]'
+
+>>> MyList().print_sorted()
+[]
