@@ -4,6 +4,9 @@
 
 
 def append_after(filename="", search_string="", new_string=""):
+    """Inserts a @new_string after each line of @filename that contains
+    @search_string
+    """
     with open(filename, "r+", encoding="utf-8") as f:
         content = f.readlines()
         lines = []
