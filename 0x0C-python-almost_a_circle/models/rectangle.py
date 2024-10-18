@@ -3,6 +3,7 @@
 Provides the class structure for Rectangle
 """
 from .base import Base
+import json
 
 
 class Rectangle(Base):
@@ -98,3 +99,8 @@ class Rectangle(Base):
         """
         return ("[{}] ({}) {}/{} - {}/{}".format(self.__class__.__name__,
                 self.id, self.__x, self.__y, self.__width, self.__height))
+
+    def to_dictionary(self):
+        """Returns the dictionary representation of a Rectangle instance
+        """
+        return (json.loads(json.dumps(self.__dict__)))
