@@ -69,3 +69,11 @@ class Base:
                 return (instances)
             except FileNotFoundError:
                 return (instances)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """Returns an instance with all attributes already set
+        """
+        dummy = cls(1, 2, 3, 4)
+        dummy.update(**dictionary)
+        return (dummy)

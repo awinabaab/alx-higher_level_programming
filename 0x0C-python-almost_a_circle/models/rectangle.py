@@ -103,4 +103,29 @@ class Rectangle(Base):
     def to_dictionary(self):
         """Returns the dictionary representation of a Rectangle instance
         """
-        return (json.loads(json.dumps(self.__dict__)))
+        dictionary = {
+                      "id": self.id,
+                      "width": self.__width,
+                      "height": self.__height,
+                      "x": self.__x,
+                      "y": self.__y
+                     }
+        return (json.loads(json.dumps(dictionary)))
+
+    def update(self, *args, **kwargs):
+        """Assigns an argument to each instance attribute
+        """
+        if args and (len(args) > 0):
+            self.__dict__.update(dict(zip(self.__dict__.keys(), args)))
+        elif kwargs and (len(kwargs) > 0):
+            for k, v in kwargs.items():
+                if k == "id":
+                    self.id = v
+                elif k == "width":
+                    self.__width = v
+                elif k == "height":
+                    self.__height = v
+                elif k == "x":
+                    self.__x = v
+                elif k == "y":
+                    self.__y = v

@@ -13,7 +13,6 @@ class Square(Rectangle):
         """Initiliaze Square instance with size, x, y and id
         """
         super().__init__(size, size, x, y, id)
-        self.size = size
 
     def __str__(self):
         """Returns a string representation of the Square instance
@@ -36,9 +35,40 @@ class Square(Rectangle):
             raise TypeError("width must be an integer")
         if value < 1:
             raise ValueError("width must be > 0")
-        self._Rectangle__width = value
+        self.__width = value
+        self.__height = value
 
     def to_dictionary(self):
         """Returns the dictionary representation of a Square instance
         """
-        return (json.loads(json.dumps(self.__dict__)))
+        dictionary = {
+                      "id": self.id,
+                      "size": self._Rectangle__width,
+                      "x": self._Rectangle__x,
+                      "y": self._Rectangle__y
+                     }
+        return (json.loads(json.dumps(dictionary)))
+
+    def update(self, *args, **kwargs):
+        """Assigns attributes to instance
+        """
+        if args and (len(args) > 0):
+            for (idx, arg) in enumerate(args):
+                if idx == 0:
+                    self.id = arg
+                elif idx == 1:
+                    self._Rectangle__height = arg
+                elif idx == 2:
+                    self.x = arg
+                elif idx == 3:
+                    self.y = arg
+        elif kwargs and (len(kwargs) > 0):
+            for k, v in kwargs.items():
+                if k == "id":
+                    self.id = v
+                elif k == "size":
+                    self._Rectangle__height = v
+                elif k == "x":
+                    self.x = v
+                elif k == "y":
+                    self.y = v
