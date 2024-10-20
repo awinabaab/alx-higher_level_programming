@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """suqare.py module
 """
-from .rectangle import Rectangle
+from models.rectangle import Rectangle
 import json
 
 
@@ -25,7 +25,7 @@ class Square(Rectangle):
     def size(self):
         """Retrieves the value of width
         """
-        return (self._Rectangle__width)
+        return (self._Rectangle__height)
 
     @size.setter
     def size(self, value):
@@ -43,7 +43,7 @@ class Square(Rectangle):
         """
         dictionary = {
                       "id": self.id,
-                      "size": self._Rectangle__width,
+                      "size": self._Rectangle__height,
                       "x": self._Rectangle__x,
                       "y": self._Rectangle__y
                      }
@@ -52,7 +52,7 @@ class Square(Rectangle):
     def update(self, *args, **kwargs):
         """Assigns attributes to instance
         """
-        if args and (len(args) > 0):
+        if (args is not None) and (len(args) > 0):
             for (idx, arg) in enumerate(args):
                 if idx == 0:
                     self.id = arg
@@ -62,7 +62,7 @@ class Square(Rectangle):
                     self.x = arg
                 elif idx == 3:
                     self.y = arg
-        elif kwargs and (len(kwargs) > 0):
+        elif (kwargs is not None) and (len(kwargs) > 0):
             for k, v in kwargs.items():
                 if k == "id":
                     self.id = v

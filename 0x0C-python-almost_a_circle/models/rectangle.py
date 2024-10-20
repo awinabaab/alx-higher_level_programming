@@ -2,7 +2,7 @@
 """rectangle.py module
 Provides the class structure for Rectangle
 """
-from .base import Base
+from models.base import Base
 import json
 
 
