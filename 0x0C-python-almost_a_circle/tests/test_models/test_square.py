@@ -10,7 +10,7 @@ from os import remove
 
 
 class TestSquare(unittest.TestCase):
-    """A class to test Base class instances
+    """A class to test Square class instances
     """
 
     def setUp(self):
@@ -238,7 +238,10 @@ class TestSquare(unittest.TestCase):
             contents = Square.from_json_string(content)
             self.assertEqual(contents[0], sq1.to_dictionary())
             self.assertEqual(contents[1], sq2.to_dictionary())
-        # Testing with None value
+
+    def test_save_to_file_none(self):
+        """Test parent class method save_to_file with None value
+        """
         Square.save_to_file(None)
         with open("Square.json", "r") as f:
             content = f.read()
@@ -271,10 +274,29 @@ class TestSquare(unittest.TestCase):
             contents = [item for item in reader]
             self.assertEqual(int(contents[0][0]), self.square_three_args.id)
             self.assertEqual(int(contents[1][0]), self.square_all_args.id)
-        # Testing with None value
+
+    def test_save_to_file_csv_none(self):
+        """Test parent class method save_to_file_csv with None value
+        """
         Square.save_to_file_csv(None)
         with open("Square.csv", "r") as f:
             reader = csv.reader(f, delimiter=",", lineterminator="\n")
             contents = [item for item in reader]
             self.assertEqual(contents[0], [])
         remove("Square.csv")
+
+    def test_load_from_file_csv_exists(self):
+        """Tests parent class method load_from_file_csv
+        """
+        Square.save_to_file_csv([self.square_three_args, self.square_all_args])
+        contents = Square.load_from_file_csv()
+
+        self.assertEqual(contents[0].id, self.square_three_args.id)
+        self.assertEqual(contents[1].id, self.square_all_args.id)
+        remove("Square.csv")
+
+    def test_load_from_file_csv_non_existent(self):
+        """Tests parent class method load_from_file_csv
+        """
+        contents = Square.load_from_file_csv()
+        self.assertEqual(contents, [])

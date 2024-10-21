@@ -9,7 +9,7 @@ import csv
 
 
 class TestRectangle(unittest.TestCase):
-    """A class to test Base class instances
+    """A class to test Rectangle class instances
     """
 
     def setUp(self):
@@ -258,7 +258,10 @@ class TestRectangle(unittest.TestCase):
             contents = Rectangle.from_json_string(content)
             self.assertEqual(contents[0], self.rect_three_args.to_dictionary())
             self.assertEqual(contents[1], self.rect_all_args.to_dictionary())
-        # Testing with None value
+
+    def test_save_to_file_none(self):
+        """Test parent class method save_to_file_csv with None value
+        """
         Rectangle.save_to_file(None)
         with open("Rectangle.json", "r") as f:
             content = f.read()
@@ -283,7 +286,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(contents, [])
 
     def test_save_to_file_csv(self):
-        """Tests parent class method save_to_file
+        """Tests parent class method save_to_file_csv
         """
         Rectangle.save_to_file_csv([self.rect_three_args, self.rect_all_args])
         with open("Rectangle.csv", "r") as f:
@@ -291,7 +294,10 @@ class TestRectangle(unittest.TestCase):
             contents = [item for item in reader]
             self.assertEqual(int(contents[0][0]), self.rect_three_args.id)
             self.assertEqual(int(contents[1][0]), self.rect_all_args.id)
-        # Testing with None value
+
+    def test_save_to_file_csv_none(self):
+        """Test parent class method save_to_file_csv with None value
+        """
         Rectangle.save_to_file_csv(None)
         with open("Rectangle.csv", "r") as f:
             reader = csv.reader(f, delimiter=",", lineterminator="\n")
@@ -300,7 +306,7 @@ class TestRectangle(unittest.TestCase):
         remove("Rectangle.csv")
 
     def test_load_from_file_csv_exists(self):
-        """Tests parent class method load_from_file
+        """Tests parent class method load_from_file_csv
         """
         Rectangle.save_to_file_csv([self.rect_three_args, self.rect_all_args])
         contents = Rectangle.load_from_file_csv()
@@ -310,7 +316,7 @@ class TestRectangle(unittest.TestCase):
         remove("Rectangle.csv")
 
     def test_load_from_file_csv_non_existent(self):
-        """Tests parent class method load_from_file
+        """Tests parent class method load_from_file_csv
         """
         contents = Rectangle.load_from_file_csv()
         self.assertEqual(contents, [])
