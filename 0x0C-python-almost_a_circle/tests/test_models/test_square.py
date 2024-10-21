@@ -5,6 +5,8 @@ import unittest
 from unittest.mock import patch
 from models.square import Square
 from models.base import Base
+import csv
+from os import remove
 
 
 class TestSquare(unittest.TestCase):
@@ -83,6 +85,11 @@ class TestSquare(unittest.TestCase):
         with self.assertRaises(TypeError):
             Square(False)
 
+    def test_square_size_getter(self):
+        """Test instance attribute size getter
+        """
+        self.assertEqual(self.square_all_args.size, 1)
+
     def test_square_x_setter(self):
         """Test instance attribute x setter
         """
@@ -101,6 +108,11 @@ class TestSquare(unittest.TestCase):
         with self.assertRaises(TypeError):
             Square(10, False)
 
+    def test_square_x_getter(self):
+        """Test instance attribute x getter
+        """
+        self.assertEqual(self.square_all_args.x, 2)
+
     def test_square_y_setter(self):
         """Test instance attribute y setter
         """
@@ -118,6 +130,11 @@ class TestSquare(unittest.TestCase):
 
         with self.assertRaises(TypeError):
             Square(10, 10, False)
+
+    def test_square_y_getter(self):
+        """Test instance attribute y getter
+        """
+        self.assertEqual(self.square_all_args.y, 3)
 
     def test_area(self):
         """Tests the area instance method
@@ -209,3 +226,55 @@ class TestSquare(unittest.TestCase):
                           }
                          ]
                         )
+
+    def test_save_to_file(self):
+        """Tests parent class method save_to_file
+        """
+        sq1 = self.square_three_args
+        sq2 = self.square_all_args
+        Square.save_to_file([sq1, sq2])
+        with open("Square.json", "r") as f:
+            content = f.read()
+            contents = Square.from_json_string(content)
+            self.assertEqual(contents[0], sq1.to_dictionary())
+            self.assertEqual(contents[1], sq2.to_dictionary())
+        # Testing with None value
+        Square.save_to_file(None)
+        with open("Square.json", "r") as f:
+            content = f.read()
+            contents = Square.from_json_string(content)
+            self.assertEqual(contents, [])
+        remove("Square.json")
+
+    def test_load_from_file_exists(self):
+        """Tests parent class method load_from_file
+        """
+        Square.save_to_file([self.square_three_args, self.square_all_args])
+        contents = Square.load_from_file()
+
+        self.assertEqual(contents[0].id, self.square_three_args.id)
+        self.assertEqual(contents[1].id, self.square_all_args.id)
+        remove("Square.json")
+
+    def test_load_from_file_non_existent(self):
+        """Tests parent class method load_from_file
+        """
+        contents = Square.load_from_file()
+        self.assertEqual(contents, [])
+
+    def test_save_to_file_csv(self):
+        """Tests parent class method save_to_file
+        """
+        Square.save_to_file_csv([self.square_three_args, self.square_all_args])
+        with open("Square.csv", "r") as f:
+            reader = csv.reader(f, delimiter=",", lineterminator="\n")
+            contents = [item for item in reader]
+            self.assertEqual(int(contents[0][0]), self.square_three_args.id)
+            self.assertEqual(int(contents[1][0]), self.square_all_args.id)
+        # Testing with None value
+        Square.save_to_file_csv(None)
+        with open("Square.csv", "r") as f:
+            reader = csv.reader(f, delimiter=",", lineterminator="\n")
+            contents = [item for item in reader]
+            self.assertEqual(contents[0], [])
+        remove("Square.csv")

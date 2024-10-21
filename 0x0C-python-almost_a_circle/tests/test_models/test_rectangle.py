@@ -4,6 +4,8 @@
 import unittest
 from unittest.mock import patch
 from models.rectangle import Rectangle
+from os import remove
+import csv
 
 
 class TestRectangle(unittest.TestCase):
@@ -89,6 +91,11 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(TypeError):
             Rectangle(False, 10)
 
+    def test_rect_width_getter(self):
+        """Test instance attribute width getter
+        """
+        self.assertEqual(self.rect_all_args.width, 1)
+
     def test_rect_height_setter(self):
         """Test instance height setter
         """
@@ -106,6 +113,11 @@ class TestRectangle(unittest.TestCase):
 
         with self.assertRaises(TypeError):
             Rectangle(10, False)
+
+    def test_rect_height_getter(self):
+        """Test instance attribute height getter
+        """
+        self.assertEqual(self.rect_all_args.height, 2)
 
     def test_rect_x_setter(self):
         """Test instance height setter
@@ -125,6 +137,11 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(TypeError):
             Rectangle(10, 10, False)
 
+    def test_rect_x_getter(self):
+        """Test instance attribute x getter
+        """
+        self.assertEqual(self.rect_all_args.x, 3)
+
     def test_rect_y_setter(self):
         """Test instance height setter
         """
@@ -142,6 +159,11 @@ class TestRectangle(unittest.TestCase):
 
         with self.assertRaises(TypeError):
             Rectangle(10, 10, 10, False)
+
+    def test_rect_y_getter(self):
+        """Test instance attribute y getter
+        """
+        self.assertEqual(self.rect_all_args.y, 4)
 
     def test_area(self):
         """Tests the area instance method
@@ -167,7 +189,7 @@ class TestRectangle(unittest.TestCase):
         """Tests the magic method @__str__
         """
         self.assertEqual(
-                         self.rect_all_args.__str__(),
+                         str(self.rect_all_args),
                          "[Rectangle] (5) 3/4 - 1/2"
                         )
 
@@ -226,3 +248,69 @@ class TestRectangle(unittest.TestCase):
                           {"id": 17, "width": 1, "height": 2, "x": 3, "y": 4},
                          ]
                         )
+
+    def test_save_to_file(self):
+        """Tests parent class method save_to_file
+        """
+        Rectangle.save_to_file([self.rect_three_args, self.rect_all_args])
+        with open("Rectangle.json", "r") as f:
+            content = f.read()
+            contents = Rectangle.from_json_string(content)
+            self.assertEqual(contents[0], self.rect_three_args.to_dictionary())
+            self.assertEqual(contents[1], self.rect_all_args.to_dictionary())
+        # Testing with None value
+        Rectangle.save_to_file(None)
+        with open("Rectangle.json", "r") as f:
+            content = f.read()
+            contents = Rectangle.from_json_string(content)
+            self.assertEqual(contents, [])
+        remove("Rectangle.json")
+
+    def test_load_from_file_exists(self):
+        """Tests parent class method load_from_file
+        """
+        Rectangle.save_to_file([self.rect_three_args, self.rect_all_args])
+        contents = Rectangle.load_from_file()
+
+        self.assertEqual(contents[0].id, self.rect_three_args.id)
+        self.assertEqual(contents[1].id, self.rect_all_args.id)
+        remove("Rectangle.json")
+
+    def test_load_from_file_non_existent(self):
+        """Tests parent class method load_from_file
+        """
+        contents = Rectangle.load_from_file()
+        self.assertEqual(contents, [])
+
+    def test_save_to_file_csv(self):
+        """Tests parent class method save_to_file
+        """
+        Rectangle.save_to_file_csv([self.rect_three_args, self.rect_all_args])
+        with open("Rectangle.csv", "r") as f:
+            reader = csv.reader(f, delimiter=",", lineterminator="\n")
+            contents = [item for item in reader]
+            self.assertEqual(int(contents[0][0]), self.rect_three_args.id)
+            self.assertEqual(int(contents[1][0]), self.rect_all_args.id)
+        # Testing with None value
+        Rectangle.save_to_file_csv(None)
+        with open("Rectangle.csv", "r") as f:
+            reader = csv.reader(f, delimiter=",", lineterminator="\n")
+            contents = [item for item in reader]
+            self.assertEqual(contents[0], [])
+        remove("Rectangle.csv")
+
+    def test_load_from_file_csv_exists(self):
+        """Tests parent class method load_from_file
+        """
+        Rectangle.save_to_file_csv([self.rect_three_args, self.rect_all_args])
+        contents = Rectangle.load_from_file_csv()
+
+        self.assertEqual(contents[0].id, self.rect_three_args.id)
+        self.assertEqual(contents[1].id, self.rect_all_args.id)
+        remove("Rectangle.csv")
+
+    def test_load_from_file_csv_non_existent(self):
+        """Tests parent class method load_from_file
+        """
+        contents = Rectangle.load_from_file_csv()
+        self.assertEqual(contents, [])
