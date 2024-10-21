@@ -197,7 +197,7 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(Square.to_json_string(None), "[]")
         self.assertEqual(Square.to_json_string(""), "[]")
         self.assertEqual(
-                         Base.to_json_string([dictionary]),
+                         Square.to_json_string([dictionary]),
                          "[{\"id\": 4, \"size\": 1, \"x\": 2, \"y\": 3}]"
                         )
 
