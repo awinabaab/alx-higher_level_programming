@@ -198,7 +198,7 @@ class TestSquare(unittest.TestCase):
     def test_to_json_string_empty_string(self):
         """Tests parent class static method to_json_string
         """
-        self.assertEqual(Square.to_json_string(""), "[]")
+        self.assertEqual(Square.to_json_string([]), "[]")
 
     def test_to_json_string(self):
         """Tests parent class static method to_json_string
