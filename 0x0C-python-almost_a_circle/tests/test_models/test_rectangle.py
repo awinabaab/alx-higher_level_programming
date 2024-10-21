@@ -256,12 +256,12 @@ class TestRectangle(unittest.TestCase):
     def test_from_json_none(self):
         """Tests parent class static method from_json_string
         """
-        self.assertEqual(Rectangle.from_json_string(None), "[]")
+        self.assertEqual(Rectangle.from_json_string(None), [])
 
     def test_from_json_string_empty_string(self):
         """Tests parent class static method from_json_string
         """
-        self.assertEqual(Rectangle.from_json_string(""), "[]")
+        self.assertEqual(Rectangle.from_json_string(""), [])
 
     def test_from_json_string_one_rect(self):
         """Tests parent class static method from_json_string
@@ -295,7 +295,6 @@ class TestRectangle(unittest.TestCase):
                           }
                          ]
                         )
-        self.assertEqual(Rectangle.from_json_string(""), "[]")
 
     def test_save_to_file(self):
         """Tests parent class method save_to_file

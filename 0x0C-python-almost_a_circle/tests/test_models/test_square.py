@@ -223,12 +223,12 @@ class TestSquare(unittest.TestCase):
     def test_from_json_string_none(self):
         """Tests parent class static method from_json_string
         """
-        self.assertEqual(Square.from_json_string(None), "[]")
+        self.assertEqual(Square.from_json_string(None), [])
 
     def test_from_json_string_one_empty_string(self):
         """Tests parent class static method from_json_string
         """
-        self.assertEqual(Square.from_json_string(""), "[]")
+        self.assertEqual(Square.from_json_string(""), [])
 
     def test_from_json_string_one_square(self):
         """Tests parent class static method from_json_string
