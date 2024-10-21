@@ -221,19 +221,60 @@ class TestRectangle(unittest.TestCase):
                          {"id": 45, "width": 4, "height": 12, "x": 90, "y": 22}
                         )
 
-    def test_to_json_string(self):
+    def test_to_json_string_none(self):
+        """Tests parent class static method to_json_string
+        """
+        self.assertEqual(Rectangle.to_json_string(None), "[]")
+
+    def test_to_json_string_empty_list(self):
+        """Tests parent class static method to_json_string
+        """
+        self.assertEqual(Rectangle.to_json_string([]), "[]")
+
+    def test_to_json_string_one_rect(self):
         """Tests parent class static method to_json_string
         """
         dictionary = self.rect_all_args.to_dictionary()
-        self.assertEqual(Rectangle.to_json_string(None), "[]")
         self.assertEqual(
                          Rectangle.to_json_string([dictionary]),
                          "[{\"id\": 5, \"width\": 1, \
 \"height\": 2, \"x\": 3, \"y\": 4}]"
                         )
-        self.assertEqual(Rectangle.to_json_string([]), "[]")
 
-    def test_from_json_string(self):
+    def test_to_json_string_two_rect(self):
+        """Tests parent class static method to_json_string
+        """
+        rect_1 = self.rect_all_args.to_dictionary()
+        rect_2 = self.rect_all_args.to_dictionary()
+        self.assertEqual(
+                         Rectangle.to_json_string([rect_1, rect_2]),
+                         "[{\"id\": 5, \"width\": 1, \
+\"height\": 2, \"x\": 3, \"y\": 4}, {\"id\": 5, \"width\": 1, \
+\"height\": 2, \"x\": 3, \"y\": 4}]"
+                        )
+
+    def test_from_json_none(self):
+        """Tests parent class static method from_json_string
+        """
+        self.assertEqual(Rectangle.from_json_string(None), "[]")
+
+    def test_from_json_string_empty_string(self):
+        """Tests parent class static method from_json_string
+        """
+        self.assertEqual(Rectangle.from_json_string(""), "[]")
+
+    def test_from_json_string_one_rect(self):
+        """Tests parent class static method from_json_string
+        """
+        json_list = [self.rect_all_args.to_dictionary()]
+        list_input = Rectangle.to_json_string(json_list)
+        self.assertEqual(
+                         Rectangle.from_json_string(list_input),
+                         [
+                          {"id": 5, "width": 1, "height": 2, "x": 3, "y": 4}]
+                        )
+
+    def test_from_json_string_two_rect(self):
         """Tests parent class static method from_json_string
         """
         json_list = [
@@ -241,7 +282,6 @@ class TestRectangle(unittest.TestCase):
                       self.rect_four_args.to_dictionary(),
                      ]
         list_input = Rectangle.to_json_string(json_list)
-        self.assertEqual(Rectangle.from_json_string(None), "[]")
         self.assertEqual(
                          Rectangle.from_json_string(list_input),
                          [

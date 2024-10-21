@@ -27,12 +27,9 @@ class Base:
     def to_json_string(list_dictionaries):
         """Returns the JSON string representation of list_dictionaries
         """
-        dictionaries = list()
         if (list_dictionaries is None) or (len(list_dictionaries) < 1):
             return ("[]")
-        for dictionary in list_dictionaries:
-            dictionaries.append(dictionary)
-        return (json.dumps(dictionaries))
+        return (json.dumps(list_dictionaries))
 
     @staticmethod
     def from_json_string(json_string):
