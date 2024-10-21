@@ -300,3 +300,10 @@ class TestSquare(unittest.TestCase):
         """
         contents = Square.load_from_file_csv()
         self.assertEqual(contents, [])
+
+    def test_create(self):
+        """Test parent class method create
+        """
+        square_1 = self.square_all_args.to_dictionary()
+        square_2 = Square.create(**square_1)
+        self.assertEqual(square_2.id, square_1["id"])

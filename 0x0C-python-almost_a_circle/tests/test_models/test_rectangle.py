@@ -245,7 +245,13 @@ class TestRectangle(unittest.TestCase):
                          Rectangle.from_json_string(list_input),
                          [
                           {"id": 5, "width": 1, "height": 2, "x": 3, "y": 4},
-                          {"id": 17, "width": 1, "height": 2, "x": 3, "y": 4},
+                          {
+                           "id": self.rect_four_args.id,
+                           "width": 1,
+                           "height": 2,
+                           "x": 3,
+                           "y": 4
+                          }
                          ]
                         )
 
@@ -320,3 +326,10 @@ class TestRectangle(unittest.TestCase):
         """
         contents = Rectangle.load_from_file_csv()
         self.assertEqual(contents, [])
+
+    def test_create(self):
+        """Test parent class method create
+        """
+        rect_1 = self.rect_all_args.to_dictionary()
+        rect_2 = Rectangle.create(**rect_1)
+        self.assertEqual(rect_2.id, rect_1["id"])
