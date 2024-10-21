@@ -231,6 +231,7 @@ class TestRectangle(unittest.TestCase):
                          "[{\"id\": 5, \"width\": 1, \
 \"height\": 2, \"x\": 3, \"y\": 4}]"
                         )
+        self.assertEqual(Rectangle.to_json_string([]), "[]")
 
     def test_from_json_string(self):
         """Tests parent class static method from_json_string
@@ -254,6 +255,7 @@ class TestRectangle(unittest.TestCase):
                           }
                          ]
                         )
+        self.assertEqual(Rectangle.from_json_string(""), "[]")
 
     def test_save_to_file(self):
         """Tests parent class method save_to_file

@@ -194,7 +194,8 @@ class TestSquare(unittest.TestCase):
         """Tests parent class static method to_json_string
         """
         dictionary = self.square_all_args.to_dictionary()
-        self.assertEqual(Base.to_json_string(None), "[]")
+        self.assertEqual(Square.to_json_string(None), "[]")
+        self.assertEqual(Square.to_json_string(""), "[]")
         self.assertEqual(
                          Base.to_json_string([dictionary]),
                          "[{\"id\": 4, \"size\": 1, \"x\": 2, \"y\": 3}]"
@@ -209,6 +210,7 @@ class TestSquare(unittest.TestCase):
                      ]
         list_input = Square.to_json_string(json_list)
         self.assertEqual(Square.from_json_string(None), "[]")
+        self.assertEqual(Square.from_json_string(""), "[]")
         self.assertEqual(
                          Square.from_json_string(list_input),
                          [
