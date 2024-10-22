@@ -322,24 +322,6 @@ class TestRectangle(unittest.TestCase):
                          ]
                         )
 
-    def test_save_to_file(self):
-        """Tests parent class method save_to_file
-        """
-        Rectangle.save_to_file([self.rect_three_args, self.rect_all_args])
-        with open("Rectangle.json", "r") as f:
-            content = f.read()
-            contents = Rectangle.from_json_string(content)
-            self.assertEqual(contents[0], self.rect_three_args.to_dictionary())
-            self.assertEqual(contents[1], self.rect_all_args.to_dictionary())
-
-    def test_save_to_file_empty_dict(self):
-        """Tests parent class method save_to_file
-        """
-        Rectangle.save_to_file([])
-        with open("Rectangle.json", "r") as f:
-            content = f.read()
-            self.assertEqual(content, "[]")
-
     def test_save_to_file_none(self):
         """Test parent class method save_to_file_csv with None value
         """
@@ -349,6 +331,25 @@ class TestRectangle(unittest.TestCase):
             contents = Rectangle.from_json_string(content)
             self.assertEqual(contents, [])
         remove("Rectangle.json")
+
+    def test_save_to_file_empty_dict(self):
+        """Tests parent class method save_to_file
+        """
+        Rectangle.save_to_file([])
+        with open("Rectangle.json", "r") as f:
+            content = f.read()
+            self.assertEqual(content, "[]")
+        remove("Rectangle.json")
+
+    def test_save_to_file(self):
+        """Tests parent class method save_to_file
+        """
+        Rectangle.save_to_file([self.rect_three_args, self.rect_all_args])
+        with open("Rectangle.json", "r") as f:
+            content = f.read()
+            contents = Rectangle.from_json_string(content)
+            self.assertEqual(contents[0], self.rect_three_args.to_dictionary())
+            self.assertEqual(contents[1], self.rect_all_args.to_dictionary())
 
     def test_load_from_file_exists(self):
         """Tests parent class method load_from_file
