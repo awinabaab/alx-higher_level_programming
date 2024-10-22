@@ -204,6 +204,13 @@ class TestRectangle(unittest.TestCase):
         self.rect_three_args.display()
         mock_print.assert_called_once_with("   #\n   #")
 
+    @patch('builtins.print')
+    def test_display_x_and_y_non_existent(self, mock_print):
+        """Tests the instance method @display
+        """
+        self.rect_two_args.display()
+        mock_print.assert_called_once_with("#\n#")
+
     def test_str(self):
         """Tests the magic method @__str__
         """
