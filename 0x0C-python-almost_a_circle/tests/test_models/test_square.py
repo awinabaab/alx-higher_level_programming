@@ -285,6 +285,14 @@ class TestSquare(unittest.TestCase):
             self.assertEqual(contents[0], sq1.to_dictionary())
             self.assertEqual(contents[1], sq2.to_dictionary())
 
+    def test_save_to_file_empty_dict(self):
+        """Tests parent class method save_to_file
+        """
+        Square.save_to_file([])
+        with open("Square.json", "r") as f:
+            content = f.read()
+            self.assertEqual(content, "[]")
+
     def test_save_to_file_none(self):
         """Test parent class method save_to_file with None value
         """

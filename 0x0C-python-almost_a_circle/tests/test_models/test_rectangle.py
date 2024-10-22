@@ -31,6 +31,18 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(TypeError):
             Rectangle()
 
+    def test_rect_neg_width_pos_height(self):
+        """Test initialization with negative @width and positive @height
+        """
+        with self.assertRaises(ValueError):
+            Rectangle(-1, 2)
+
+    def test_rect_pos_width_neg_height(self):
+        """Test initialization with positive @width and negative @height
+        """
+        with self.assertRaises(ValueError):
+            Rectangle(1, -2)
+
     def test_rect_one_arg(self):
         """Test initialization with one arg @width
         """
@@ -185,6 +197,13 @@ class TestRectangle(unittest.TestCase):
         self.rect_all_args.display()
         mock_print.assert_called_once_with("\n\n\n\n   #\n   #")
 
+    @patch('builtins.print')
+    def test_display_y_non_existent(self, mock_print):
+        """Tests the instance method @display
+        """
+        self.rect_three_args.display()
+        mock_print.assert_called_once_with("   #\n   #")
+
     def test_str(self):
         """Tests the magic method @__str__
         """
@@ -305,6 +324,14 @@ class TestRectangle(unittest.TestCase):
             contents = Rectangle.from_json_string(content)
             self.assertEqual(contents[0], self.rect_three_args.to_dictionary())
             self.assertEqual(contents[1], self.rect_all_args.to_dictionary())
+
+    def test_save_to_file_empty_dict(self):
+        """Tests parent class method save_to_file
+        """
+        Rectangle.save_to_file([])
+        with open("Rectangle.json", "r") as f:
+            content = f.read()
+            self.assertEqual(content, "[]")
 
     def test_save_to_file_none(self):
         """Test parent class method save_to_file_csv with None value
