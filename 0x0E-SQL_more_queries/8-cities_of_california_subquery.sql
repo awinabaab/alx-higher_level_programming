@@ -3,4 +3,4 @@
 -- Results must be sorted in the ascending order by cities.id
 -- The database name will be passed as an argument of the mysql command
 
-SELECT * FROM cities WHERE state_id = 1;
+SELECT id, name FROM cities WHERE state_id = 1;
