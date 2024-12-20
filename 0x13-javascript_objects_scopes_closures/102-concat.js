@@ -3,12 +3,15 @@ const fs = require('fs');
 const filesArray = process.argv.slice(2);
 const firstSource = filesArray[0];
 const secondSource = filesArray[1];
-const destination = filesArray[2];
+const destinationFile = filesArray[2];
 
-if (!firstSource && !secondSource && !destination) {
-  const firstSourceContent = fs.readFile(firstSource, 'utf-8');
-  const secondSourceContent = fs.readFile(secondSource, 'utf-8');
-  const content = `${firstSourceContent}
-${secondSourceContent}`;
-  fs.writeFile(destination, content, { flag: 'w' });
-}
+fs.readFile(firstSource, 'utf-8', (err, firstSourceContent) => {
+  if (err) console.error(err);
+
+  fs.readFile(secondSource, 'utf-8', (err, secondSourceContent) => {
+    if (err) console.error(err);
+
+    const concatContent = `${firstSourceContent}${secondSourceContent}`;
+    fs.writeFile(destinationFile, concatContent, err => { if (err) console.error(err); });
+  });
+});
