@@ -6,17 +6,17 @@ from sys import argv
 
 
 if __name__ == "__main__":
-    if (len(argv) != 4):
+    if (len(argv) != 5):
         print("[Usage]: {} <mysql username> <mysql password> \
 <mysql database name> <query>".format(argv[0])
               )
         exit(1)
 
     db_host = 'localhost'
-    db_user = sys.argv[1]
-    db_passwd = sys.argv[2]
-    db_name = sys.argv[3]
-    db_queryfilter = sys.argv[4]
+    db_user = argv[1]
+    db_passwd = argv[2]
+    db_name = argv[3]
+    db_queryfilter = argv[4]
     db_port = 3306
 
     db_connection = MySQLdb.connect(host=db_host,
