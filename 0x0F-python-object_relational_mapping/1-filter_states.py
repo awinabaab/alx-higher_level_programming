@@ -6,6 +6,12 @@ from sys import argv
 
 
 if __name__ == "__main__":
+    if (len(argv) != 4):
+        print("[Usage]: {} <mysql username> <mysql password> \
+<mysql database name>".format(argv[0])
+              )
+        exit(1)
+
     db_host = 'localhost'
     db_username = argv[1]
     db_passwd = argv[2]
