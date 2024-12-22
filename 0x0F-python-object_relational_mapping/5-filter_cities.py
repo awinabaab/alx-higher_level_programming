@@ -31,11 +31,9 @@ if __name__ == "__main__":
 
     db_cursor = db_connection.cursor()
     db_cursor.execute(query, (db_state_name,))
-    result = list(db_cursor)
+    cities = [city for obj in list(db_cursor) for city in obj]
 
-    for cities in result:
-        for city in cities:
-            print(city, end="\n" if city == result[-1][-1] else ", ")
+    print(", ".join(cities))
 
     db_cursor.close()
     db_connection.close()
