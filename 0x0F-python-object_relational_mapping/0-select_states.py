@@ -13,9 +13,9 @@ if __name__ == "__main__":
         exit(1)
 
     db_host = 'localhost'
-    db_username = sys.argv[1]
-    db_passwd = sys.argv[2]
-    db_name = sys.argv[3]
+    db_username = argv[1]
+    db_passwd = argv[2]
+    db_name = argv[3]
     db_port = 3306
 
     db_connection = MySQLdb.connect(host=db_host,
