@@ -6,12 +6,6 @@ from sys import argv
 
 
 if __name__ == "__main__":
-    if (len(argv) != 5):
-        print("[Usage]: {} <mysql username> <mysql password> \
-<mysql database name> <query>".format(argv[0])
-              )
-        exit(1)
-
     db_host = 'localhost'
     db_user = argv[1]
     db_passwd = argv[2]
@@ -29,7 +23,7 @@ if __name__ == "__main__":
     query = """
                 SELECT *
                 FROM states
-                WHERE states.name = '{}'
+                WHERE states.name = BINARY '{}'
                 ORDER BY states.id ASC;
             """
 
