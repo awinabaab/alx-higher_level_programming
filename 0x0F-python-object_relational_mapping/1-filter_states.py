@@ -23,7 +23,7 @@ if __name__ == "__main__":
                 SELECT *
                 FROM states
                 WHERE states.name
-                LIKE BINARYo 'N%'
+                LIKE BINARY 'N%'
                 ORDER BY states.id ASC;
             """
 
