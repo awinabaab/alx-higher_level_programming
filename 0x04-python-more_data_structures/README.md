@@ -99,7 +99,7 @@
    - If the values doesn't exist, the dictionary won't change
    - All keys having the searched value have to be deleted
 
-## [103-pyton.c](https://github.com/awinabaab/alx-higher_level_programming/blob/master/0x04-python-more_data_structures/103-python.c)
+## [103-python.c](https://github.com/awinabaab/alx-higher_level_programming/blob/master/0x04-python-more_data_structures/103-python.c)
    Create two C functions that print some basic info about Python lists and Python bytes objects.
    - Python lists:
      - Prototype: `void print_python_list(PyObject *p);`
