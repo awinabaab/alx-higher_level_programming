@@ -28,14 +28,14 @@
    - Instantiation with `size` (no type/value verification)
 
 ## [2-square.py](https://github.com/awinabaab/alx-higher_level_programming/blob/master/0x06-python-classes/2-square.py)
-   A class `Square` that defines a square by: (based on [1-square.py](https://github.com/awinabaab/alx-higher_level_programming/blob/master/0x06-python-classes/1-square.py)
+   A class `Square` that defines a square by: (based on [1-square.py](https://github.com/awinabaab/alx-higher_level_programming/blob/master/0x06-python-classes/1-square.py))
    - Private instance attribute: `size`
    - Instantiation with optional `size`: `def __init__(self, size=0):`
      - `size` must be an integer, otherwise a `TypeError` exception with the message `size must be an integer` is raised
      - If `size` is less than `0`, a `ValueError` exception with the message `size must be >= 0` is raised
 
 ## [3-square.py](https://github.com/awinabaab/alx-higher_level_programming/blob/master/0x06-python-classes/3-square.py)
-   A class `Square` that defines a square by: (based on [2-square.py](https://github.com/awinabaab/alx-higher_level_programming/blob/master/0x06-python-classes/2-square.py)
+   A class `Square` that defines a square by: (based on [2-square.py](https://github.com/awinabaab/alx-higher_level_programming/blob/master/0x06-python-classes/2-square.py))
    - Private instance attribute: `size`
    - Instantiation with optional `size`: `def __init__(self, size=0):`
      - `size` must be an integer, otherwise a `TypeError` exception with the message `size must be an integer` is raised
@@ -43,7 +43,7 @@
    - Public instance method: `def area(self):` that returns te current square area
 
 ## [4-square.py](https://github.com/awinabaab/alx-higher_level_programming/blob/master/0x06-python-classes/4-square.py)
-   A class `Square` that defines a square by: (based on [3-square.py](https://github.com/awinabaab/alx-higher_level_programming/blob/master/0x06-python-classes/3-square.py)
+   A class `Square` that defines a square by: (based on [3-square.py](https://github.com/awinabaab/alx-higher_level_programming/blob/master/0x06-python-classes/3-square.py))
    - Private instance attribute: `size`:
      - Property `def size(self):` to retrieve it
      - Property setter `def size(self, value):` to set it:
@@ -53,7 +53,7 @@
    - Public instance method: `def area(self):` that returns te current square area
 
 ## [5-square.py](https://github.com/awinabaab/alx-higher_level_programming/blob/master/0x06-python-classes/5-square.py)
-   A class `Square` that defines a square by: (based on [4-square.py](https://github.com/awinabaab/alx-higher_level_programming/blob/master/0x06-python-classes/4-square.py)
+   A class `Square` that defines a square by: (based on [4-square.py](https://github.com/awinabaab/alx-higher_level_programming/blob/master/0x06-python-classes/4-square.py))
    - Private instance attribute: `size`:
      - Property	`def size(self):` to retrieve it
      - Property	setter `def size(self, value):`	to set it:
@@ -65,7 +65,7 @@
      - if `size` is equal to `0`, print an empty line
 
 ## [6-square.py](https://github.com/awinabaab/alx-higher_level_programming/blob/master/0x06-python-classes/6-square.py)
-   A class `Square` that defines a square by: (based on [5-square.py](https://github.com/awinabaab/alx-higher_level_programming/blob/master/0x06-python-classes/5-square.py)
+   A class `Square` that defines a square by: (based on [5-square.py](https://github.com/awinabaab/alx-higher_level_programming/blob/master/0x06-python-classes/5-square.py))
    - Private instance attribute: `size`:
      - property `def size(self):` to retrieve it
      - property setter `def size(self, value):` to set it:
@@ -102,7 +102,7 @@
    - Public instance method: `def sorted_insert(self, value):` that inserts a new Node into the correct sorted position in the list (increasing order)
 
 ## [101-square.py](https://github.com/awinabaab/alx-higher_level_programming/blob/master/0x06-python-classes/102-square.py)
-   A class `Square` that defines a square by: (based on [6-square.py](https://github.com/awinabaab/alx-higher_level_programming/blob/master/0x06-python-classes/6-square.py)
+   A class `Square` that defines a square by: (based on [6-square.py](https://github.com/awinabaab/alx-higher_level_programming/blob/master/0x06-python-classes/6-square.py))
    - Private instance attribute: `size`:
      - property `def size(self):` to retrieve it
      - property setter `def size(self, value):` to set it:
@@ -120,7 +120,7 @@
    - Printing a `Square` instance will have the same behavior as calling `my_print()` method an instance
 
 ## [102-square.py](https://github.com/awinabaab/alx-higher_level_programming/blob/master/0x06-python-classes/102-square.py)
-   A class `Square` that defines a square by: (based on [4-square.py](https://github.com/awinabaab/alx-higher_level_programming/blob/master/0x06-python-classes/4-square.py)
+   A class `Square` that defines a square by: (based on [4-square.py](https://github.com/awinabaab/alx-higher_level_programming/blob/master/0x06-python-classes/4-square.py))
    - Private instance attribute: `size`:
      - property `def size(self)`: to retrieve it
      - property setter `def size(self, value)`: to set it:
@@ -182,4 +182,3 @@ Disassembly of circumference:
              13 LOAD_ATTR                2 (_MagicClass__radius)
              16 BINARY_MULTIPLY
              17 RETURN_VALUE
-    ```
